@@ -21,4 +21,9 @@ public class StrategyServiceImpl implements IStrategyService {
         return (List<StrategyEntity>) strategyDao.findAll();
     }
 
+    @Override
+    public StrategyEntity findById(Long id) {
+        return strategyDao.findById(id).orElse(null);
+    }
+
 }

@@ -3,6 +3,7 @@ package com.encuestasapirest.strategy.controller;
 import com.encuestasapirest.strategy.entity.StrategyEntity;
 import com.encuestasapirest.strategy.service.IStrategyService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,5 +22,10 @@ public class StrategiesController {
     @GetMapping
     public List<StrategyEntity> findAll(){
         return strategyService.findAll();
+    }
+
+    @GetMapping("{id}")
+    public StrategyEntity findById(@PathVariable Long id){
+        return strategyService.findById(id);
     }
 }
