@@ -19,19 +19,6 @@ public class UserEntity implements Serializable {
 
     @Getter
     @Setter
-    private String firstName;
-
-    @Getter
-    @Setter
-    private String lastName;
-
-    @Getter
-    @Setter
-    @Column(unique = true, nullable = false)
-    private String email;
-
-    @Getter
-    @Setter
     @Column(unique = true, nullable = false)
     private String username;
 
@@ -43,7 +30,7 @@ public class UserEntity implements Serializable {
     @Getter
     @Setter
     @Column(nullable = false)
-    private boolean active;
+    private boolean enabled;
 
 
 }
