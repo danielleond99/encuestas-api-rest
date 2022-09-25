@@ -26,4 +26,32 @@ public class StrategyServiceImpl implements IStrategyService {
         return strategyDao.findById(id).orElse(null);
     }
 
+    @Override
+    public StrategyEntity save(StrategyEntity strategy) {
+        return strategyDao.save(strategy);
+    }
+
+    @Override
+    public StrategyEntity update(Long id, StrategyEntity strategy) {
+
+        StrategyEntity existsStrategy = strategyDao.findById(id).orElse(null);
+
+        if(existsStrategy != null)
+            existsStrategy = strategy;
+
+        assert existsStrategy != null;
+        return strategyDao.save(existsStrategy);
+    }
+
+    @Override
+    public StrategyEntity delete(Long id) {
+
+        StrategyEntity existsStrategy = strategyDao.findById(id).orElse(null);
+
+        if(existsStrategy != null)
+            strategyDao.delete(existsStrategy);
+
+        return existsStrategy;
+    }
+
 }

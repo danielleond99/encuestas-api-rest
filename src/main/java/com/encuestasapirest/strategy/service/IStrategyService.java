@@ -9,4 +9,10 @@ public interface IStrategyService {
     List<StrategyEntity> findAll();
 
     StrategyEntity findById(Long id);
+
+    StrategyEntity save(StrategyEntity strategy);
+
+    StrategyEntity update(Long id, StrategyEntity strategy);
+
+    StrategyEntity delete(Long id);
 }
