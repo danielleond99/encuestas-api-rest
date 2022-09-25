@@ -1,18 +1,18 @@
 package com.encuestasapirest.strategy.service;
 
 import com.encuestasapirest.strategy.entity.StrategyEntity;
-
-import java.util.List;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 
 public interface IStrategyService {
 
-    List<StrategyEntity> findAll();
+    ResponseEntity<?> findAll();
 
-    StrategyEntity findById(Long id);
+    ResponseEntity<?> findById(Long id);
 
-    StrategyEntity save(StrategyEntity strategy);
+    ResponseEntity<?> save(StrategyEntity strategy, BindingResult validationResult);
 
-    StrategyEntity update(Long id, StrategyEntity strategy);
+    ResponseEntity<?> update(Long id, StrategyEntity strategy, BindingResult validationResult);
 
-    StrategyEntity delete(Long id);
+    ResponseEntity<?> delete(Long id);
 }
